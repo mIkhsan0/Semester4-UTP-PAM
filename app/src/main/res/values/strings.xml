@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UTPtesPAM</string>
+    <string name="default_web_client_id">826407458596-ihe6g40a4fj1sen5v66neghoffdg1f6q.apps.googleusercontent.com</string>
+    <string name="title_home">Home</string>
+    <string name="title_create">Create</string>
+    <string name="title_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

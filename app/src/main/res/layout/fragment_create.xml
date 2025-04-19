@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" android:padding="24dp"
+    tools:context=".ui.create.CreateFragment">
+
+    <ImageView
+        android:id="@+id/imageViewCreateIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_smiley_cloud" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textViewCreateTitle"/>
+
+    <TextView
+        android:id="@+id/textViewCreateTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Pesan Rahasia"
+        android:textAlignment="center"
+        android:textColor="@color/blue_500" android:textSize="28sp" android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewCreateIcon" />
+
+    <TextView
+        android:id="@+id/textViewCreateSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ini tempat aman untuk perasaanmu yang belum sempat terungkap."
+        android:textAlignment="center"
+        android:textColor="@color/grey_700" android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewCreateTitle" />
+
+    <TextView
+        android:id="@+id/textViewRecipientLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Penerima:"
+        android:textColor="@color/purple_600"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewCreateSubtitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldRecipientLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:boxStrokeWidth="0dp" app:boxStrokeWidthFocused="0dp" app:hintEnabled="false" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewRecipientLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextRecipient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background_create"
+            android:hint="Nama penerima"
+            android:textColorHint="@color/purple_600"
+            android:textSize="14sp"
+            android:inputType="textPersonName"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewMessageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Pesan:"
+        android:textColor="@color/purple_600"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textFieldRecipientLayout" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldMessageLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewMessageLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background_create" android:gravity="top|start"
+            android:hint="Tuliskan pesan rahasiamu"
+            android:textColorHint="@color/purple_600"
+            android:textSize="14sp"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonUploadImage"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Unggah Gambar"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:textColor="@color/purple_600"
+        android:gravity="center"
+        app:icon="@drawable/ic_upload"
+        app:iconTint="@color/purple_600"
+        app:iconPadding="8dp"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textFieldMessageLayout"
+        app:strokeColor="@color/purple_600"
+        app:cornerRadius="8dp"/>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background_create"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Kirim"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonUploadImage"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
