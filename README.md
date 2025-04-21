@@ -18,12 +18,14 @@ yang berkolaborasi menciptakan WhisperVerse dengan sepenuh hati 💖. Aplikasi i
 
 **Penasaran** seperti apa tampilan dari WhisperVerse? Mari intip desain UI kami yang dirancang dengan hati, mengedepankan kesederhanaan dan kenyamanan bagi pengguna. Setiap elemen dibuat untuk menyampaikan suasana hangat, aman, dan penuh ketulusan—selaras dengan semangat aplikasi ini. Yuk, jelajahi desain lengkapnya!
 
-🔗✨ [Check This Out! Figma UI Design - WhisperVerse]([https://www.figma.com/file/xxxxxxxxxxxxx](https://www.figma.com/design/aXZ45UIZtAQYRcQzmjyDsT/UTP-PAM?node-id=0-1&t=U34bcoZZmqU40M4e-1))
+🔗✨ [Check This Out! Figma UI Design - WhisperVerse](https://www.figma.com/design/aXZ45UIZtAQYRcQzmjyDsT/UTP-PAM?node-id=0-1&t=U34bcoZZmqU40M4e-1)
+
 
 
 | Overview 1 | Overview 2 | 
 |:--:|:--:|
 | ![image](https://github.com/mIkhsan0/Semester4-UTP-PAM/blob/master/screenshot/homepageWhisperverse.png?raw=true) | ![image](screenshot/homepageWhisperverse2.png) |
+
 
 
 **Terima kasih**  telah mengunjungi *WhisperVerse*! Kami harap kamu menikmati setiap detik menjelajahi aplikasi ini—tempat di mana kata-kata kecil memiliki arti besar. Biarkan bisikanmu menemukan jalannya, dan temukan makna di balik setiap pesan yang datang tanpa nama. Selamat menikmati perjalanan sunyi yang penuh arti ini. 🤍✨
