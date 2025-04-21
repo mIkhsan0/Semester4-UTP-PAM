@@ -20,7 +20,7 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="550dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="120dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@android:color/transparent"
             android:fitsSystemWindows="true">

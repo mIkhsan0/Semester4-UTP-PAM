@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -70,8 +71,9 @@ public class HomeFragment extends Fragment {
         messageList = new ArrayList<>();
         messagesAdapter = new MessagesAdapter(getContext(), messageList);
         RecyclerView recyclerView = binding.recyclerViewMessages;
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2); // 2 kolom
+        recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(messagesAdapter);
     }
 
