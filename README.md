@@ -1,3 +1,1 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/mlkhsan0/Semester4-UTP-PAM/master/screenshot/banner.png" width="800" alt="Banner" />
-</p>
+![Banner](https://github.com/mIkhsan0/Semester4-UTP-PAM/blob/master/screenshot/banner.png?raw=true)
