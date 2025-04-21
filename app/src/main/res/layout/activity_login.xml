@@ -69,7 +69,6 @@
             android:background="@drawable/edit_text_background_create"
             android:hint="Enter username"
             android:textSize="14sp"
-
             android:textColorHint="@color/purple_600"
             android:inputType="textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
