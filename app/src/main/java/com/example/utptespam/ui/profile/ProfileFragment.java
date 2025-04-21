@@ -14,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser; // Import FirebaseUser
+import com.google.firebase.firestore.AggregateQuery;
+import com.google.firebase.firestore.AggregateQuerySnapshot;
+import com.google.firebase.firestore.AggregateSource;
 import com.google.firebase.firestore.DocumentReference; // Import DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot; // Import DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore; // Import Firestore
@@ -22,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException; // Import Excep
 import com.example.utptespam.LoginActivity;
 import com.example.utptespam.R;
 import com.example.utptespam.databinding.FragmentProfileBinding;
+import com.google.firebase.firestore.Query;
 
 public class ProfileFragment extends Fragment {
 
@@ -98,10 +102,27 @@ public class ProfileFragment extends Fragment {
                 }
             });
 
-            // TODO: Load Post Count (requires querying messages/posts collection later)
-            binding.textViewPostCount.setText("? Postingan"); // Placeholder
+            // --- ★ Tambahkan Query untuk Menghitung Postingan ★ ---
+            Query postsQuery = db.collection("messages")
+                    .whereEqualTo("senderId", userId); // Filter pesan berdasarkan senderId
 
-            // TODO: Load Profile Picture using Glide/Picasso from URL stored in Firestore
+            // Gunakan aggregate query untuk mendapatkan count
+            AggregateQuery countQuery = postsQuery.count();
+            countQuery.get(AggregateSource.SERVER).addOnCompleteListener(countTask -> {
+                if (binding == null) return; // Check binding
+
+                if (countTask.isSuccessful()) {
+                    AggregateQuerySnapshot snapshot = countTask.getResult();
+                    long count = snapshot.getCount(); // Dapatkan jumlah dokumen
+                    String postCountText = count + " Postingan"; // Format teks
+                    binding.textViewPostCount.setText(postCountText); // Set teks ke TextView
+                    Log.d(TAG, "Post count loaded: " + count);
+                } else {
+                    Log.w(TAG, "Error getting post count.", countTask.getException());
+                    binding.textViewPostCount.setText("0 Postingan"); // Tampilkan default jika error
+                }
+            });
+            // --- ★ Akhir Query Hitung ★ ---
 
         } else {
             // No user logged in - this shouldn't happen if MainActivity protects routes,
@@ -109,6 +130,7 @@ public class ProfileFragment extends Fragment {
             Log.w(TAG, "No current user found in ProfileFragment");
             binding.textViewEmailValue.setText("N/A");
             binding.textViewUsernameValue.setText("N/A");
+            binding.textViewPostCount.setText("0 Postingan"); // Default jika tidak login
             // Consider navigating back to Login
             // Intent intent = new Intent(getActivity(), LoginActivity.class);
             // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
