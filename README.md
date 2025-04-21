@@ -24,7 +24,7 @@ yang berkolaborasi menciptakan WhisperVerse dengan sepenuh hati 💖. Aplikasi i
 
 | Overview 1 | Overview 2 | 
 |:--:|:--:|
-| ![image](https://github.com/mIkhsan0/Semester4-UTP-PAM/blob/master/screenshot/homepageWhisperverse.png?raw=true) | ![image](screenshot/homepageWhisperverse2.png) | ![image](screenshot/loginWhisperverse.png) | ![image](screenshot/registerWhisperverse.png) | ![image](screenshot/profilWhisperverse.png) |
+| ![image](https://github.com/mIkhsan0/Semester4-UTP-PAM/blob/master/screenshot/homepageWhisperverse.png?raw=true) | ![image](screenshot/homepageWhisperverse2.png) |
 
 
 
