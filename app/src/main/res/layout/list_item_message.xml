@@ -1,56 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="4dp"
-    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="4dp">
 
+    <!-- Outer background -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E3F6F9"
         android:padding="12dp">
 
+        <!-- "To: Recipient" di luar inner card -->
         <TextView
             android:id="@+id/textViewRecipient"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/grey_700"
-            android:textSize="12sp"
+            android:text="To: Someone"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="To: Placeholder" /> <TextView
-        android:id="@+id/textViewMessageSnippet"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/textViewRecipient"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imageViewMessage"
-        app:layout_constraintVertical_bias="0.0"
-        android:maxLines="3" android:ellipsize="end"
-        tools:text="This is a placeholder for the message snippet which might be quite long sometimes." /> <ImageView
-        android:id="@+id/imageViewMessage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:visibility="gone" app:layout_constraintTop_toBottomOf="@id/textViewMessageSnippet"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        tools:visibility="visible"/> </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Inner card putih -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerCardContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_inner_card"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewRecipient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="2:3">
+
+            <!-- Gambar opsional -->
+            <!-- Bungkus ImageView dengan CardView agar bisa corner radius -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageCardWrapper"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.5">
+
+                <ImageView
+                    android:id="@+id/imageViewMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Isi pesan -->
+            <TextView
+                android:id="@+id/textViewMessage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:maxLines="3"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@id/imageCardWrapper"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="I miss your cat, not you" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
