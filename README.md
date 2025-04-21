@@ -10,10 +10,10 @@ yang berkolaborasi menciptakan WhisperVerse dengan sepenuh hati 💖. Aplikasi i
 
 | 👤 Nama             | 🆔 NIM           | 🛠️ Peran               | ✨ Emoji Khas |
 |---------------------|------------------|------------------------|---------------|
-| **paseom**          | 21xxxxxxxx        | UI Designer            | 🎨🧁 |
+| **paseom**          | 235150700111009        | UI Designer            | 🎨🧁 |
 | **mlkhsan0**        | 235150707111012        | Create New Message     | 💌🛠️ |
 | **Ghaida00**        | 235150700111001        | Profile Feature        | 🙋‍♀️📱 |
-| **Kinkymaylana**    | 21xxxxxxxx        | Authentication         | 🔐🌟 |
+| **Kinkymaylana**    | 235150701111007        | Authentication         | 🔐🌟 |
 | **snopflake**       | 235150700111005        | Homepage & Search Bar  | 🏠🔍 |
 
 **Penasaran** seperti apa tampilan dari WhisperVerse? Mari intip desain UI kami yang dirancang dengan hati, mengedepankan kesederhanaan dan kenyamanan bagi pengguna. Setiap elemen dibuat untuk menyampaikan suasana hangat, aman, dan penuh ketulusan—selaras dengan semangat aplikasi ini. Yuk, jelajahi desain lengkapnya!
