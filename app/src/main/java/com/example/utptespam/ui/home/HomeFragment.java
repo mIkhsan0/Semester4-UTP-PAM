@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Toast; // Import Toast
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,13 +47,23 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View view = binding.getRoot();
+        return binding.getRoot(); // Simpel: langsung return root
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         setupRecyclerView();
-        setupSearchListener(); // Setup the search listener
-        listenForMessages(""); // Initial load with empty search text
+        setupSearchListener();
+        listenForMessages("");
 
-        return view;
+        ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
+            int topInset = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+            int extraTopPadding = (int) (getResources().getDisplayMetrics().density * 16); // +16dp
+            view.setPadding(0, topInset + extraTopPadding, 0, 0);
+            return insets;
+        });
     }
 
     private void setupRecyclerView() {
@@ -65,26 +77,31 @@ public class HomeFragment extends Fragment {
 
     // --- Add Search Listener Setup ---
     private void setupSearchListener() {
+        // Search saat ketik
         binding.editTextSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Not needed
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Not needed
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // When text changes, re-run the query with the new search text
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(Editable s) {
                 String searchText = s.toString().trim();
                 listenForMessages(searchText);
-                // TODO: Add debouncing here later to avoid querying on every keystroke
             }
         });
+
+        // Search saat ikon kaca pembesar ditekan
+        binding.btnSearchIcon.setOnClickListener(v -> {
+            String searchText = binding.editTextSearch.getText().toString().trim();
+            listenForMessages(searchText);
+            Toast.makeText(getContext(), "Mencari: " + searchText, Toast.LENGTH_SHORT).show();
+        });
+
+        // Search saat tombol "Cari" ditekan
+        binding.btnCari.setOnClickListener(v -> {
+            String searchText = binding.editTextSearch.getText().toString().trim();
+            listenForMessages(searchText);
+            Toast.makeText(getContext(), "Mencari: " + searchText, Toast.LENGTH_SHORT).show();
+        });
     }
+
     // --- End Search Listener Setup ---
 
 
