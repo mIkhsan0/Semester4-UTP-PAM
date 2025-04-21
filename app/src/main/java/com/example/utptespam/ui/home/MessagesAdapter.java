@@ -78,6 +78,8 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
             intent.putExtra("recipient", message.getRecipient());
             intent.putExtra("snippet", message.getSnippet());
             intent.putExtra("imageUrl", message.getImageUrl());
+            intent.putExtra("senderId", message.getSenderId());
+            intent.putExtra("documentId", message.getDocumentId());
             context.startActivity(intent);
         });
     }

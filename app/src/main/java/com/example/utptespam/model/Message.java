@@ -1,9 +1,13 @@
 package com.example.utptespam.model; // Use your package name
 
 import com.google.firebase.Timestamp; // Import Timestamp
+import com.google.firebase.firestore.DocumentId;
 import com.google.firebase.firestore.ServerTimestamp; // Import ServerTimestamp annotation
 
 public class Message {
+
+    @DocumentId
+    private String documentId;
     private String recipient;
     private String snippet;
     private String imageUrl;
@@ -23,6 +27,9 @@ public class Message {
     }
 
     // Getters
+    public String getDocumentId() {
+        return documentId;
+    }
     public String getRecipient() { return recipient; }
     public String getSnippet() { return snippet; }
     public String getImageUrl() { return imageUrl; }
