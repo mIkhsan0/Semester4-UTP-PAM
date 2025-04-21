@@ -11,8 +11,8 @@ yang berkolaborasi menciptakan WhisperVerse dengan sepenuh hati 💖. Aplikasi i
 | 👤 Nama             | 🆔 NIM           | 🛠️ Peran               | ✨ Emoji Khas |
 |---------------------|------------------|------------------------|---------------|
 | **paseom**          | 21xxxxxxxx        | UI Designer            | 🎨🧁 |
-| **mlkhsan0**        | 21xxxxxxxx        | Create New Message     | 💌🛠️ |
-| **Ghaida00**        | 21xxxxxxxx        | Profile Feature        | 🙋‍♀️📱 |
+| **mlkhsan0**        | 235150707111012        | Create New Message     | 💌🛠️ |
+| **Ghaida00**        | 235150700111001        | Profile Feature        | 🙋‍♀️📱 |
 | **Kinkymaylana**    | 21xxxxxxxx        | Authentication         | 🔐🌟 |
 | **snopflake**       | 235150700111005        | Homepage & Search Bar  | 🏠🔍 |
 
