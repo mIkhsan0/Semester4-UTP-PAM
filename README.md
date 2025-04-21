@@ -1,1 +1,1 @@
-![Banner](https://github.com/mlkhsan0/Semester4-UTP-PAM/blob/master/screenshot/Banner.png?raw=true)
+![Banner](https://raw.githubusercontent.com/mlkhsan0/Semester4-UTP-PAM/master/screenshot/banner.png)
