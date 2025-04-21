@@ -1,6 +1,7 @@
 package com.example.utptespam.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +71,17 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         Message message = messageList.get(position);
         holder.bind(message);
+
+        // Untuk membuka detail
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetailMessageActivity.class);
+            intent.putExtra("recipient", message.getRecipient());
+            intent.putExtra("snippet", message.getSnippet());
+            intent.putExtra("imageUrl", message.getImageUrl());
+            context.startActivity(intent);
+        });
     }
+
 
     @Override
     public int getItemCount() {
